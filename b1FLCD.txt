@@ -53,7 +53,7 @@
 
 	4) array
 		<type> ::= int | char
-		<array_decl> ::= array <type> <identifier> [ <number> ] 
+		<array_decl> ::= array <type> <identifier> [ <number> ] | array <type> <identifier> [ ]
 
 
 3) Syntax
