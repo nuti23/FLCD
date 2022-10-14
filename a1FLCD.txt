@@ -52,7 +52,7 @@ else
 
 $ p3
 
-int vector[];
+array int vector[];
 int n;
 int poz = 0;
 int prod = 1;
