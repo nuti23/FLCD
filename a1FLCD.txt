@@ -1,0 +1,95 @@
+$ p1
+
+int a;
+int b;
+int c;
+int max;
+
+write<--"give a: ";
+read-->a;
+write<--nline;
+
+write<--"give b: ";
+read-->b;
+write<--nline;
+
+write<--"give c: ";
+read-->c;
+write<--nline;
+
+if (a > b && a > c)
+	max = a;
+if (b > a && b > c)
+	max = b;
+if (c > a && c > b)
+	max = c;
+
+write<--"max: "<--max<--nline;
+
+$ p2
+
+int a;
+int b;
+int c;
+
+write<--"give a: ";
+read-->a;
+write<--nline;
+
+write<--"give b: ";
+read-->b;
+write<--nline;
+
+write<--"give c: ";
+read-->c;
+write<--nline;
+
+if ( b == a + 1 && c == a + 3)
+	write<--"consecutive numbers"<--nline;
+else 
+	write<--"NONconsecutive numbers"<--nline;
+
+
+$ p3
+
+int vector[];
+int n;
+int poz = 0;
+int prod = 1;
+
+while ( n != null )
+	read-->n;
+	if (n != 0) 
+		vector[poz] = n;
+		poz ++;
+	else 
+		prod = -1;
+
+if(prod != -1)
+	for ( int i = 0; i < poz; i++)
+		prod = prod * vector[i];
+else
+	prod = 0;
+
+write<--"product: "<--prod<--nline;
+
+
+	
+$ p1Err
+
+int a = 123$5;
+int b;
+int c;
+int max;
+
+if (a > b && a > c)
+	max = a;
+if (b > a && b > c)
+	max = b;
+if (c > a && c > b)
+	max = c;
+
+write<--"max: <--max<--nline;
+
+
+

@@ -1,0 +1,137 @@
+
+1) Alphabet
+	1) upper (A-Z) and lower (a-z) case letters of the English alphabet
+		
+		<letter> ::= a|...|z|A|...Z	
+		<seq_letters> ::=	<letter> | <letter> <seq_letters>
+
+	2) decimal digits (0-9)
+
+		<sign> ::= +|-
+		<non_zero_digit> ::= 1|2|...|9
+		<digit> ::= 0 | <non_zero_digit>
+		<seq_digits> ::= <digit> | <digit> <seq_digits>
+		<number> ::= <non_zero_digit> | <non_zero_digit> <seq_digits>
+
+
+2) Lexic
+	SPECIAL SYMBOLS
+	1) operators: + - * ** / //= > >= <= < != ! || && ++ --
+
+		<logical_operator> ::= || | && | !
+		<arithmetic_operator> ::= + | - | * | ** | / | //
+		<relational_operator> ::= > | >= | < | <= | == | !=
+		<assignment_operator> ::= = | += | -= | *= | /=
+
+
+	2) separators: () [] ; space --> <-- $ " "
+	3) reserved words: 	
+			int char bool float string
+			if else while for 
+			write read nline
+	
+	IDENTIFIERS
+	- a sequence of letters and  digits, such that the first character is a letter
+	
+		<identifier> ::= <seq_letters> |
+				    <seq_letters> <seq_digits> |
+ 				    <letter> <identifier>
+
+	CONSTANTS
+	1) integer - int
+      		<integer> ::= 0 | <number> | <sign> <number> 
+
+	2) character - char
+    		<character> ::= '<letter>' | '<digit>'
+
+	3) string
+		<character> ::= "" | {any EBCDIC character other than " }
+   			EBCDIC = Extended Binary Coded Decimal Interchange
+
+		<characters> ::= <character> | <characters> <character>
+		<string> ::= "<characters>" | ""
+
+	4) array
+		<type> ::= int | char
+		<array_decl> ::= array <type> <identifier> [ <number> ] 
+
+
+3) Syntax
+
+	STATEMENTS
+		<program> ::= <decl_list> ; <stmt_list>
+		<decl_list> ::= <declaration> | <declaration> ; <decl_list>
+		<declaration> ::= <type> <identifier> | <array_decl>
+
+		<expression> ::= <expression> + <term> | <expression> - <term> | <term>
+		<term> ::= <term> * <factor> | <term> / <factor> | <factor>
+ 		<factor> ::= ( <expression> ) | <identifier>
+		
+		<simpl_stmt> ::= <assign_stmt> | <io_stmt>
+		<struct_stmt> ::= <stmt_list> | <if_stmt> | <while_stmt>
+		<stmt> ::= <simpl_stmt> | <struct_stmt>
+		<stmt_list> ::= <stmt> | <stmt> ; <stmt_list>
+
+		<if_stmt> ::= if ( <condition> ) <stmt> | if ( <condition> ) <stmt> else <stmt>
+		<while_stmt> ::= while ( <condition> ) <stmt>
+		
+	ASSIGNMENT
+		<assign_stmt> ::= <identifier> = <expression>
+		<plus_assign_stmt> ::= <identifier> += <expression>
+		<minus_assign_stmt> ::= <identifier> -= <expression>
+		<increment_stmt> ::= <identifier> ++ 
+		<decrement_stmt> ::= <identifier> -- 
+		
+	INPUT/OUTPUT
+		<iostmt> ::= read --> <identifier> | write <-- <identifier> | write <-- "<identifier>"
+
+	CONDITIONAL
+		<condition> ::= <expression> <relational_operator> <expression> | 
+				    <expression> <logical_operator> <expression>
+
+	LOOP
+		<update_stmt> ::= <plus_assign_stmt> | <minus_assign_stmt> | <increment_stmt> | <decrement_stmt>
+		<for_stmt> ::= for ( <assign_stmt> ; <expression> ; <update_stmt> ) <stmt>
+
+
+4) Tokens
+
+(
+)
+[
+]
+;
+"space" 
+,
++
+++
+-
+--
+*
+**
+/
+//
+=
+<
+>
+<=
+>=
+==
+!=
+!
+-=
++=
+-->
+<--
+||
+&&
+if
+else
+for
+while
+int
+string
+char
+read
+write		
+nline
