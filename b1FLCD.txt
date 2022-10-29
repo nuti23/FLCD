@@ -106,10 +106,10 @@
 :
 .
 ,
-"
 '
 -->
 <--
+space
 +
 ++
 -
@@ -140,3 +140,4 @@ char
 read
 write
 nline
+array
