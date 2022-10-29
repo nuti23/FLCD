@@ -5,15 +5,15 @@ int b;
 int c;
 int max;
 
-write<--"give a: ";
+write<--'give a: ';
 read-->a;
 write<--nline;
 
-write<--"give b: ";
+write<--'give b: ';
 read-->b;
 write<--nline;
 
-write<--"give c: ";
+write<--'give c: ';
 read-->c;
 write<--nline;
 
@@ -24,7 +24,7 @@ if (b > a && b > c)
 if (c > a && c > b)
 	max = c;
 
-write<--"max: "<--max<--nline;
+write<--'max: '<--max<--nline;
 
 $ p2
 
@@ -32,22 +32,22 @@ int a;
 int b;
 int c;
 
-write<--"give a: ";
+write<--'give a: ';
 read-->a;
 write<--nline;
 
-write<--"give b: ";
+write<--'give b: ';
 read-->b;
 write<--nline;
 
-write<--"give c: ";
+write<--'give c: ';
 read-->c;
 write<--nline;
 
 if ( b == a + 1 && c == a + 3)
-	write<--"consecutive numbers"<--nline;
+	write<--'consecutive numbers'<--nline;
 else 
-	write<--"NONconsecutive numbers"<--nline;
+	write<--'NONconsecutive numbers'<--nline;
 
 
 $ p3
@@ -71,7 +71,7 @@ if(prod != -1)
 else
 	prod = 0;
 
-write<--"product: "<--prod<--nline;
+write<--'product: '<--prod<--nline;
 
 
 	
@@ -89,7 +89,7 @@ if (b > a && b > c)
 if (c > a && c > b)
 	max = c;
 
-write<--"max: <--max<--nline;
+write<--'max: <--max<--nline;
 
 
 
