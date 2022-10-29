@@ -1,0 +1,25 @@
+int a ;
+int b ;
+int c ;
+int max ;
+
+write <-- 'give a: ';
+read --> a;
+write<--nline;
+
+write <-- 'give b: ';
+read-->b;
+write<--nline;
+
+write<--'give c: ';
+read-->c;
+write<--nline;
+
+if (a > b && a > c)
+	max = a;
+if (b > a && b > c)
+	max = b;
+if (c > a && c > b)
+	max = c;
+
+write<--'max: '<--max<--nline;

@@ -1,0 +1,249 @@
+index: 0   token: int
+index: (4, 0)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (6, 0)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (8, 0)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (2, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: (8, 1)   token: const
+index: 0   token: ;
+index: 0   token: read
+index: 0   token: -->
+index: (4, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: 0   token: nline
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: (0, 0)   token: const
+index: 0   token: ;
+index: 0   token: read
+index: 0   token: -->
+index: (6, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: 0   token: nline
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: (2, 1)   token: const
+index: 0   token: ;
+index: 0   token: read
+index: 0   token: -->
+index: (8, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: 0   token: nline
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (4, 0)   token: id
+index: 0   token: >
+index: (6, 0)   token: id
+index: 0   token: &&
+index: (4, 0)   token: id
+index: 0   token: >
+index: (8, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (4, 0)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (6, 0)   token: id
+index: 0   token: >
+index: (4, 0)   token: id
+index: 0   token: &&
+index: (6, 0)   token: id
+index: 0   token: >
+index: (8, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (6, 0)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (8, 0)   token: id
+index: 0   token: >
+index: (4, 0)   token: id
+index: 0   token: &&
+index: (8, 0)   token: id
+index: 0   token: >
+index: (6, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (8, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: (8, 2)   token: const
+index: 0   token: <--
+index: (2, 0)   token: id
+index: 0   token: <--
+index: 0   token: nline
+index: 0   token: ;
+index: 0   token: array
+index: 0   token: int
+index: (8, 3)   token: id
+index: 0   token: [
+index: 0   token: ]
+index: 0   token: ;
+index: 0   token: int
+index: (0, 1)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (0, 2)   token: id
+index: 0   token: =
+index: (6, 1)   token: const
+index: 0   token: ;
+index: 0   token: int
+index: (4, 1)   token: id
+index: 0   token: =
+index: (8, 4)   token: const
+index: 0   token: ;
+index: 0   token: while
+index: 0   token: (
+index: (0, 1)   token: id
+index: 0   token: !=
+index: (6, 2)   token: id
+index: 0   token: )
+index: 0   token: read
+index: 0   token: -->
+index: (0, 1)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (0, 1)   token: id
+index: 0   token: !=
+index: (6, 1)   token: const
+index: 0   token: )
+index: (8, 3)   token: id
+index: 0   token: [
+index: (0, 2)   token: id
+index: 0   token: ]
+index: 0   token: =
+index: (0, 1)   token: id
+index: 0   token: ;
+index: (0, 2)   token: id
+index: 0   token: ++
+index: 0   token: ;
+index: 0   token: else
+index: (4, 1)   token: id
+index: 0   token: =
+index: 0   token: -
+index: (8, 4)   token: const
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (4, 1)   token: id
+index: 0   token: !=
+index: 0   token: -
+index: (8, 4)   token: const
+index: 0   token: )
+index: 0   token: for
+index: 0   token: (
+index: 0   token: int
+index: (0, 3)   token: id
+index: 0   token: =
+index: (6, 1)   token: const
+index: 0   token: ;
+index: (0, 3)   token: id
+index: 0   token: <
+index: (0, 2)   token: id
+index: 0   token: ;
+index: (0, 3)   token: id
+index: 0   token: ++
+index: 0   token: )
+index: (4, 1)   token: id
+index: 0   token: =
+index: (4, 1)   token: id
+index: 0   token: *
+index: (8, 3)   token: id
+index: 0   token: [
+index: (0, 3)   token: id
+index: 0   token: ]
+index: 0   token: ;
+index: 0   token: else
+index: (4, 1)   token: id
+index: 0   token: =
+index: (6, 1)   token: const
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
+index: (4, 2)   token: const
+index: 0   token: <--
+index: (4, 1)   token: id
+index: 0   token: <--
+index: 0   token: nline
+index: 0   token: ;
+index: 0   token: int
+index: (4, 0)   token: id
+index: 0   token: =
+index: 0   token: ;
+index: 0   token: int
+index: (6, 0)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (8, 0)   token: id
+index: 0   token: ;
+index: 0   token: int
+index: (2, 0)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (4, 0)   token: id
+index: 0   token: >
+index: (6, 0)   token: id
+index: 0   token: &&
+index: (4, 0)   token: id
+index: 0   token: >
+index: (8, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (4, 0)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (6, 0)   token: id
+index: 0   token: >
+index: (4, 0)   token: id
+index: 0   token: &&
+index: (6, 0)   token: id
+index: 0   token: >
+index: (8, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (6, 0)   token: id
+index: 0   token: ;
+index: 0   token: if
+index: 0   token: (
+index: (8, 0)   token: id
+index: 0   token: >
+index: (4, 0)   token: id
+index: 0   token: &&
+index: (8, 0)   token: id
+index: 0   token: >
+index: (6, 0)   token: id
+index: 0   token: )
+index: (2, 0)   token: id
+index: 0   token: =
+index: (8, 0)   token: id
+index: 0   token: ;
+index: 0   token: write
+index: 0   token: <--
