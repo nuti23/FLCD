@@ -7,7 +7,7 @@ class TokenClassifier:
         self.classify()
 
     def classify(self) -> None:
-        with open('Token.in', 'r') as f:
+        with open('files/token.in', 'r') as f:
             for i in range(14):
                 separator = f.readline().strip()
                 if separator == "space":
