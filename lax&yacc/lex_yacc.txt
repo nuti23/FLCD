@@ -1,0 +1,161 @@
+%{
+    #include <stdio.h>
+    #include <string.h>
+    int currLine = 1;
+%}
+
+%option noyywrap
+
+identifier         ^[a-zA-Z][a-zA-Z0-9_]*$
+number             ^(0|[+-]?[1-9][0-9]*)$
+character          \'[a-zA-Z0-9]\'
+stringCh           \"[^\"]*\"
+boolean            true|false
+
+
+%%
+
+"("		{printf("Operator: %s\n", yytext);return OPEN_ROUND_BRACKET;}
+")"		{printf("Operator: %s\n", yytext);return CLOSED_ROUND_BRACKET;}
+"["		{printf("Operator: %s\n", yytext);return OPEN_SQUARE_BRACKET;}
+"]"		{printf("Operator: %s\n", yytext);return CLOSED_SQUARE_BRACKET;}
+";"		{printf("Operator: %s\n", yytext);return SEMICOLON;}
+","		{printf("Operator: %s\n", yytext);return COMA;}
+"+"		{printf("Operator: %s\n", yytext);return PLUS;}
+"++"		{printf("Operator: %s\n", yytext);return INCREMENT;}
+"-"		{printf("Operator: %s\n", yytext);return MINUS;}
+"--"		{printf("Operator: %s\n", yytext);return DECREMENT;}
+"*"		{printf("Operator: %s\n", yytext);return MULTIPLY;}
+"/"		{printf("Operator: %s\n", yytext);return DIVIDE;}
+"<="		{printf("Operator: %s\n", yytext);return SMALLER_OR_EQUAL;}
+">="		{printf("Operator: %s\n", yytext);return BIGGER_OR_EQUAL;}
+"="		{printf("Operator: %s\n", yytext);return ASSIGN;}
+"=="		{printf("Operator: %s\n", yytext);return EQUAL;}
+"!="		{printf("Operator: %s\n", yytext);return NOT_EQUAL;}
+"-->"		{printf("Operator: %s\n", yytext);return READ;}
+"<--"		{printf("Operator: %s\n", yytext);return WRITE;}
+"||"		{printf("Operator: %s\n", yytext);return OR;}
+"&&"		{printf("Operator: %s\n", yytext);return AND;}
+
+"if"		{printf("Operator: %s\n", yytext);return if;}
+"else"	{printf("Operator: %s\n", yytext);return else;}
+"for"		{printf("Operator: %s\n", yytext);return for;}
+"while"	{printf("Operator: %s\n", yytext);return while;}
+"int"		{printf("Operator: %s\n", yytext);return int;}
+"string"	{printf("Operator: %s\n", yytext);return string;}
+"char"	{printf("Operator: %s\n", yytext);return char;}
+"read"	{printf("Operator: %s\n", yytext);return read;}
+"write"	{printf("Operator: %s\n", yytext);return write;}
+"nline"	{printf("Operator: %s\n", yytext);return nline;}
+
+
+{identifier}        {printf("Identifier: %s\n", yytext);return identifier;}
+{integer}           {printf("Number: %s\n", yytext);return number;}
+{string}            {printf("String: %s\n", yytext);return stringCh;}
+{character}         {printf("Character: %s\n", yytext);return character;}
+{boolean}           {printf("Character: %s\n", yytext);return boolean;}
+
+
+
+[ \t+]          {}
+[\n]+           {currLine++;}
+
+%%
+%{
+    #include <stdio.h>
+    #include <stdlib.h>
+%}
+
+
+%token OPEN_ROUND_BRACKET
+%token CLOSED_ROUND_BRACKET
+%token OPEN_SQUARE_BRACKET
+%token CLOSED_SQUARE_BRACKET
+%token SEMICOLON
+%token QUOTE
+%token PLUS
+%token MULTIPLY
+%token DIVIDE
+%token INCREMENT
+%token MINUS
+%token DECREMENT
+%token BIGGER
+%token SMALLER
+%token SMALLER_OR_EQUAL
+%token BIGGER_OR_EQUAL
+%token ASSIGN
+%token NOT_EQUAL
+%token READ
+%token WRITE
+%token OR
+%token AND
+%token if
+%token else
+%token for
+%token while
+%token int
+%token string
+%token char
+%token read
+%token write
+%token nline
+
+%%
+
+program : decl_list SEMICOLON stmt_list
+decl_list : declaration | declaration SEMICOLON decl_list
+declaration : type identifier | array_decl
+expression : expression PLUS term | expression MINUS term | term
+term : term MULTIPLY factor | term DIVIDE factor | factor
+factor : OPEN_ROUND_BRACKET expression CLOSED_ROUND_BRACKET | identifier
+simpl_stmt : assign_stmt | io_stmt
+struct_stmt : stmt_list | if_stmt | while_stmt
+stmt : simpl_stmt | struct_stmt
+stmt_list : stmt | stmt SEMICOLON stmt_list
+if_stmt : if OPEN_ROUND_BRACKET condition CLOSED_ROUND_BRACKET stmt | if OPEN_ROUND_BRACKET <condition> CLOSED_ROUND_BRACKET stmt else stmt
+while_stmt : while OPEN_ROUND_BRACKET condition CLOSED_ROUND_BRACKET stmt
+assign_stmt : identifier ASSIGN expression
+increment_stmt : identifier INCREMENT
+decrement_stmt : identifier DECREMENT
+iostmt : read --> identifier | write <-- identifier | write <-- QUOTE identifier QUOTE
+condition : expression relational_operator expression | expression logical_operator expression
+update_stmt : plus_assign_stmt | minus_assign_stmt | increment_stmt | decrement_stmt
+for_stmt : for OPEN_ROUND_BRACKET assign_stmt SEMICOLON expression SEMICOLON update_stmt CLOSED_ROUND_BRACKET stmt
+
+%%
+
+
+yyerror(char *s) {
+    printf("%s\n", s);
+}
+
+extern FILE *yyin;
+
+main(int argc, char ** argv) {
+    if (argc > 1)
+        yyin = fopen(argv[1], "r");
+    if ((argc > 2) && (!strcmp(argv[2], "-d")))
+        yydebug = 1;
+    if (!yyparse())
+        fprintf(stderr, "error\n");
+}
+int a;
+int b;
+int c;
+int max;
+write<--"give a: ";
+read-->a;
+write<--nline;
+write<--"give b: ";
+read-->b;
+write<--nline;
+write<--"give c: ";
+read-->c;
+write<--nline;
+if (a > b && a > c)
+max = a;
+if (b > a && b > c)
+max = b;
+if (c > a && c > b)
+max = c;
+write<--"max: "<--max<--nline;
